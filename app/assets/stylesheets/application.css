@@ -16,7 +16,6 @@
 
 .home-page {
   height: 100vh;
-  /* max-height: 100vh; */
   display: flex;
   flex-direction: column;
 }
@@ -45,4 +44,16 @@
   width: 100%;
   padding: 1rem 0;
   border: none;
+}
+
+.header,
+.header i,
+.actions input {
+  color: #fff;
+}
+
+
+.shared-links {
+  margin-top: 0.5rem;
+  text-align: center;
 }
