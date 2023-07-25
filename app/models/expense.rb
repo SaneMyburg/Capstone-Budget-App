@@ -4,5 +4,4 @@ class Expense < ApplicationRecord
 
   validates :name, presence: true, length: { in: 1..20 }
   validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :author_id, presence: true
 end

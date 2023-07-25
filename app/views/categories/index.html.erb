@@ -1,0 +1,20 @@
+<div class="header navbar navbar-expand-lg navbar-dark bg-primary px-3">
+  <i class="bi bi-list text-xl font-weight-bold" data-bs-toggle="modal" data-bs-target="#signOutModal"></i>
+   <div class="d-flex align-items-center mx-auto">
+    <h2 class="my-1">Categories</h2>
+  </div>
+  <i class="bi bi-search text-xl font-weight-bold"></i>
+</div>
+
+<div class="container mt-4">
+  <% @categories.each do |category| %>
+    <div class="d-flex align-items-center my-3">
+      <i class="<%= category.icon %> text-xl mr-3"></i>
+      <h4><%= category.name %></h4>
+    </div>
+  <% end %>
+</div>
+
+<div class="position-fixed bottom-0 w-100 bg-success text-white p-3 text-center">
+  <%= link_to "Add a new category", new_category_path, class:"text-white no-underline" %>
+</div>

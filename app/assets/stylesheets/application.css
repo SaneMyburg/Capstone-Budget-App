@@ -52,8 +52,15 @@
   color: #fff;
 }
 
-
 .shared-links {
   margin-top: 0.5rem;
   text-align: center;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.borderless {
+  border: none;
 }
