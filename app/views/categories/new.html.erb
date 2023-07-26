@@ -13,7 +13,6 @@
     <%= f.select :icon, Category::ICONS.map { |icon| [icon[:name], icon[:class]] }, class: "border border-blue-500" %>
   </div>
   <div class="form-group mt-4 ml-4 mr-4">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "block w-full border-blue-200 border-3 mt-2 mr-5" %>
+    <%= f.text_field :name, class: "form-control w-100 border-blue-200 border-3 mt-2 mr-5", placeholder: "Category Name" %>
   </div>
 <% end %>

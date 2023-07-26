@@ -10,7 +10,11 @@
   <% @categories.each do |category| %>
     <div class="d-flex align-items-center my-3">
       <i class="<%= category.icon %> text-xl mr-3"></i>
-      <h4><%= category.name %></h4>
+      <div>
+        <%= link_to category_expenses_path(category), class: 'no-underline' do %>
+          <h4><%= category.name %></h4>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
