@@ -80,3 +80,8 @@
 .col-auto {
   flex: 0 0 auto;
 }
+
+.category-list {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}

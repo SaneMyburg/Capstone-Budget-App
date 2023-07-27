@@ -21,6 +21,7 @@
 </div>
 
 <div class="container mt-4">
+  <div class="category-list">
   <% @expenses.each do |expense| %>
     <div class="expense-entry border rounded p-3 mb-3">
       <div class="row d-flex align-items-center">
@@ -34,6 +35,7 @@
       </div>
     </div>
   <% end %>
+  </div>
 </div>
 
 <div class="position-fixed bottom-0 w-100 bg-success text-white p-3 text-center">
