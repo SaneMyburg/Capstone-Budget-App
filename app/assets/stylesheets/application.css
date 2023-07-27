@@ -64,3 +64,15 @@
 .borderless {
   border: none;
 }
+
+.icon-lg {
+  font-size: 60px;
+}
+
+.light-gray {
+  color: #949ea8;
+}
+
+.bold-text {
+  font-weight: bold;
+}

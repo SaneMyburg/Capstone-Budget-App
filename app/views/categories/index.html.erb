@@ -8,15 +8,17 @@
 
 <div class="container mt-4">
   <% @categories.each do |category| %>
-    <div class="d-flex align-items-center my-3">
-      <i class="<%= category.icon %> text-xl mr-3"></i>
-      <div>
-        <%= link_to category_expenses_path(category), class: 'no-underline' do %>
-          <h4><%= category.name %></h4>
-        <% end %>
-        <p><%= category.created_at.strftime("%b %d %Y") %></p>
-        <p><%= number_to_currency(category.total_expenses_amount) %></p>
+    <div class="d-flex align-items-center my-3 border rounded p-2 mb-3">
+      <div class="d-flex align-items-center flex-grow-1">
+        <i class="bi <%= category.icon %> text-primary icon-lg mr-3"></i>
+        <div>
+          <%= link_to category_expenses_path(category), class: 'no-underline' do %>
+            <h6 class="light-gray m-2"><%= category.name %></h6>
+          <% end %>
+          <p class="light-gray m-2"><%= category.created_at.strftime("%d %b %Y") %></p>
+        </div>
       </div>
+      <p class="bold-text"><%= number_to_currency(category.total_expenses_amount) %></p>
     </div>
   <% end %>
 </div>
