@@ -5,9 +5,9 @@ class ExpensesController < ApplicationController
     @category = Category.find(params[:category_id]) if params[:category_id].present?
 
     @expenses = if @category
-                  @category.expenses.where(user: current_user)
+                  @category.expenses.includes(:user)
                 else
-                  current_user.expenses
+                  current_user.expenses.includes(:category)
                 end
   end
 
@@ -18,11 +18,15 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = current_user.expenses.build(expense_params)
-
+  
     if @expense.save
-      @category = Category.find(params[:category_id])
-      @category.expenses << @expense
-      redirect_to category_expenses_path(@category), notice: 'Expense created successfully'
+      if params[:category_id].present?
+        @category = Category.find(params[:category_id])
+        @category.expenses << @expense
+        redirect_to category_expenses_path(@category), notice: 'Expense created successfully'
+      else
+        redirect_to expenses_path, notice: 'Expense created successfully'
+      end
     else
       render :new
     end
