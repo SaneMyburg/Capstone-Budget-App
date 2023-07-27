@@ -8,11 +8,13 @@
 </div>
 
 <div class="container mt-4">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <div>
+  <div class="row d-flex align-items-center mb-4">
+    <div class="col-auto">
       <% if @category %>
-        <i class="<%= @category.icon %> text-xl mr-3"></i>
+        <i class=" bi <%= @category.icon %> text-primary icon-lg mr-3"></i>
       <% end %>
+    </div>
+    <div class="col d-flex justify-content-end">
       <h4><%= number_to_currency(@expenses.sum(:amount)) %></h4>
     </div>
   </div>
@@ -20,10 +22,16 @@
 
 <div class="container mt-4">
   <% @expenses.each do |expense| %>
-    <div class="d-flex align-items-center my-3">
-      <h4><%= expense.name %></h4>
-      <p><%= expense.created_at.strftime("%b %d %Y") %></p>
-      <p><%= number_to_currency(expense.amount) %></p>
+    <div class="expense-entry border rounded p-3 mb-3">
+      <div class="row d-flex align-items-center">
+        <div class="col">
+          <h4><%= expense.name %></h4>
+          <p><%= expense.created_at.strftime("%d %b %Y") %></p>
+        </div>
+        <div class="col-auto ml-auto">
+          <p><%= number_to_currency(expense.amount) %></p>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

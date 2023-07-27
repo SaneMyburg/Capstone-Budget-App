@@ -76,3 +76,7 @@
 .bold-text {
   font-weight: bold;
 }
+
+.col-auto {
+  flex: 0 0 auto;
+}
