@@ -1,4 +1,4 @@
-<%= form_with(model: @expense, url: category_expenses_path, method: :post) do |form| %>
+<%= form_with(model: @expense, url: category_expenses_path, method: :post, html: { class: "new_expense_form" }) do |form| %>
    <div class="header navbar navbar-expand-lg navbar-dark bg-primary px-3">
      <%= link_to categories_path do%>
       <i class="bi bi-arrow-left text-white text-xl font-bold"></i>
