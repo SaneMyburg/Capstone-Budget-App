@@ -41,3 +41,4 @@ group :test do
 end
 
 gem 'devise'
+gem 'rails-controller-testing'
