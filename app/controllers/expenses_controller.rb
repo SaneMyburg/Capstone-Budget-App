@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = current_user.expenses.build(expense_params)
-  
+
     if @expense.save
       if params[:category_id].present?
         @category = Category.find(params[:category_id])

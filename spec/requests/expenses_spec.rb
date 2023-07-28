@@ -7,7 +7,7 @@ RSpec.describe 'Expenses', type: :request do
   let(:user) { User.create!(name: 'user01', email: 'user01@gmail.com', password: 'password01') }
 
   icon_class = Category::ICONS.first[:class]
-  let(:category) { Category.create!(user: user, name: 'Journey', icon: icon_class) }
+  let(:category) { Category.create!(user:, name: 'Journey', icon: icon_class) }
 
   before do
     user.confirm
@@ -16,8 +16,8 @@ RSpec.describe 'Expenses', type: :request do
 
   describe 'GET /category_expenses/:id' do
     it 'should return a 200 OK status and render the expenses template' do
-      expense1 = Expense.create!(user: user, name: 'Expense 1', amount: 100, created_at: Time.now)
-      expense2 = Expense.create!(user: user, name: 'Expense 2', amount: 200, created_at: Time.now)
+      expense1 = Expense.create!(user:, name: 'Expense 1', amount: 100, created_at: Time.now)
+      expense2 = Expense.create!(user:, name: 'Expense 2', amount: 200, created_at: Time.now)
 
       category.expenses << expense1
       category.expenses << expense2

@@ -6,7 +6,7 @@ RSpec.describe 'Categories', type: :request do
   let(:user) { User.create!(name: 'user01', email: 'user01@gmail.com', password: 'password01') }
 
   icon_class = Category::ICONS.first[:class]
-  let(:category) { Category.create!(user: user, name: 'Journey', icon: icon_class) }
+  let(:category) { Category.create!(user:, name: 'Journey', icon: icon_class) }
 
   before do
     user.confirm
