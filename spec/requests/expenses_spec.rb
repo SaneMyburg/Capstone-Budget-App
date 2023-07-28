@@ -1,4 +1,5 @@
 require 'rails_helper'
+include ActionView::Helpers::NumberHelper
 
 RSpec.describe 'Expenses', type: :request do
   include Devise::Test::IntegrationHelpers

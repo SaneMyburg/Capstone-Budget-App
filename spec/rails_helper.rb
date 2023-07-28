@@ -31,10 +31,12 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  
+
   config.use_transactional_fixtures = true
 
   config.include Devise::Test::IntegrationHelpers, type: :request
+
+  # config.include ActionView::Helpers::NumberHelper, type: :feature
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
