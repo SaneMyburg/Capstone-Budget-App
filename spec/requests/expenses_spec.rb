@@ -1,8 +1,8 @@
 require 'rails_helper'
-include ActionView::Helpers::NumberHelper
 
 RSpec.describe 'Expenses', type: :request do
   include Devise::Test::IntegrationHelpers
+  include ActionView::Helpers::NumberHelper
 
   let(:user) { User.create!(name: 'user01', email: 'user01@gmail.com', password: 'password01') }
 

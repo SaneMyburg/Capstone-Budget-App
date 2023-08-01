@@ -4,7 +4,6 @@ RSpec.feature 'Expenses Page', type: :feature do
   include Devise::Test::IntegrationHelpers
 
   let(:user) { User.create!(name: 'Sandy', email: 'sandy@gmail.com', password: 'sane123') }
-
   icon_class = Category::ICONS.first[:class]
   let!(:category) { Category.create!(user:, name: 'Journey', icon: icon_class) }
   let(:expense) { Expense.create!(user:, name: 'France', amount: 583.15) }
@@ -30,6 +29,22 @@ RSpec.feature 'Expenses Page', type: :feature do
       expect(find('input[name="expense[name]"]')[:placeholder]).to eq('Expense Name')
       expect(find('input[name="expense[amount]"]')[:placeholder]).to eq('Amount')
     end
+  end
+end
+
+RSpec.feature 'Expenses Page', type: :feature do
+  include Devise::Test::IntegrationHelpers
+
+  let(:user) { User.create!(name: 'Sandy', email: 'sandy@gmail.com', password: 'sane123') }
+  icon_class = Category::ICONS.first[:class]
+  let!(:category) { Category.create!(user:, name: 'Journey', icon: icon_class) }
+  let(:expense) { Expense.create!(user:, name: 'France', amount: 583.15) }
+
+  before do
+    user.confirm
+    sign_in user
+    category.expenses << expense
+    visit category_expenses_path(category)
   end
 
   scenario 'User can add a new expense' do
