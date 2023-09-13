@@ -1,0 +1,43 @@
+<div class="header navbar navbar-expand-lg navbar-dark bg-primary px-3">
+   <%= link_to categories_path do%>
+      <i class="bi bi-arrow-left text-white"></i>
+   <% end %>
+   <div class="d-flex align-items-center mx-auto">
+     <h2 class="my-1">Expenses</h2>
+   </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row d-flex align-items-center mb-4">
+    <div class="col-auto">
+      <% if @category %>
+        <i class=" bi <%= @category.icon %> text-primary icon-lg mr-3"></i>
+      <% end %>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <h4><%= number_to_currency(@expenses.sum(:amount)) %></h4>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="category-list">
+  <% @expenses.each do |expense| %>
+    <div class="expense-entry border rounded p-3 mb-3">
+      <div class="row d-flex align-items-center">
+        <div class="col">
+          <h4><%= expense.name %></h4>
+          <p><%= expense.created_at.strftime("%d %b %Y") %></p>
+        </div>
+        <div class="col-auto ml-auto">
+          <p><%= number_to_currency(expense.amount) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="position-fixed bottom-0 w-100 bg-success text-white p-3 text-center">
+  <%= link_to "Add a new expense", new_category_expense_path, class: "text-white no-underline" %>
+</div>

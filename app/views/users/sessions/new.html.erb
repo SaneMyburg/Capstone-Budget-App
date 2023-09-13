@@ -1,0 +1,30 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ <div class="header navbar navbar-expand-lg navbar-dark bg-primary px-3">
+  <%= link_to root_path, class: "navbar-brand text-white" do %>
+    <i class="bi bi-arrow-left text-xl font-weight-bold"></i>
+  <% end %>
+  <div class="d-flex align-items-center mx-auto">
+    <h2 class="my-1">LOGIN</h2>
+  </div>
+  <div class="actions ml-auto text-white text-xl font-weight-bold">
+    <%= f.submit "Next", class: "btn" %>
+  </div>
+</div>
+
+  <div class="form-content mt-5">
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+    </div>
+
+    <div class="field mt-5">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+  </div>
+  <% end %>
+<% end %>
+<div class="shared-links mt-5">
+  <%= render "devise/shared/links" %>
+</div>
+
