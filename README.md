@@ -69,12 +69,12 @@ The **Budget Expenses App** is a classic example of a budget website, that helps
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [You can check the live demo here](https://budget-expense-app.onrender.com/)
+- [You can check the live demo here](https://budgetsmart.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📺 Presentation <a name="presentation"></a>
-- [Link to video presentation](https://www.loom.com/)
+- [Link to video presentation](https://www.loom.com/share/Capstone-Budget-App-Presentation-b5e3d5ac116343afb5f58b1e034a8485?sid=23592877-3d17-4ad9-a179-eed5cc23d7a8/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
