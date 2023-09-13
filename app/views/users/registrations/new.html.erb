@@ -1,0 +1,37 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="header navbar navbar-expand-lg navbar-dark bg-primary px-3">
+    <%= link_to root_path, class: "navbar-brand text-white" do%>
+      <i class="bi bi-arrow-left text-xl font-weight-bold"></i>
+    <% end %>
+    <div class="d-flex align-items-center mx-auto">
+    <h2 class="my-1">Register</h2>
+  </div>
+  <div class="actions ml-auto text-white text-xl font-weight-bold">
+    <%= f.submit "Next", class: "btn" %>
+  </div>
+  </div>
+  <div class="field mt-5">
+    <%= f.text_field :name, autofocus: true, autocomplete: "email", placeholder: "Name", class: "form-control" %>
+  </div>
+
+  <div class="field mt-5">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+  </div>
+
+  <div class="field mt-5">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter Password", class: "form-control" %>
+  </div>
+
+  <div class="field mt-5">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Re-type Password", class: "form-control" %>
+  </div>
+<% end %>
+
+<div class="shared-links mt-5">
+  <%= render "devise/shared/links" %>
+</div>

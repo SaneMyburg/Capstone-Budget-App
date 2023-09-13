@@ -1,0 +1,19 @@
+<%= form_with(model: @expense, url: category_expenses_path, method: :post, html: { class: "new_expense_form" }) do |form| %>
+   <div class="header navbar navbar-expand-lg navbar-dark bg-primary px-3">
+     <%= link_to categories_path do%>
+      <i class="bi bi-arrow-left text-white text-xl font-bold"></i>
+    <% end %>
+    <h2 class="d-flex align-items-center mx-auto">New Expense</h2>
+    <%= form.submit "Save", class: "text-xl font-weight-bold bg-primary text-white borderless" %>
+  </div>
+  <div class="form-group mt-4 ml-4 mr-4">
+    <%= form.text_field :name, class: "form-control w-100 border-blue-200 border-3 mt-2 mr-5", placeholder: "Expense Name" %>
+  </div>
+  <div class="form-group mt-4 ml-4 mr-4">
+    <%= form.number_field :amount, class: "form-control w-100 border-blue-200 border-3 mt-2 mr-5", placeholder: "Amount" %>
+  </div>
+    <%= form.hidden_field :category_id, value: @category.id %>
+<% end %>
+<div class="position-fixed bottom-0 w-100 bg-success text-white p-3 text-center">
+  <%= link_to 'Back to Expenses', category_expenses_path(@category), class:"fixed bottom-0 w-full bg-green-700 text-white text-center py-4 no-underline text-xl" %>
+</div>
